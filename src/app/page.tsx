@@ -49,7 +49,7 @@ export default function Home() {
               href="/about"
               className="rounded-full border border-accent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
             >
-              Read my thesis
+              Read my journey
             </Link>
             <Link
               href="/projects"
