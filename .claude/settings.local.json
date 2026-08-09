@@ -12,7 +12,8 @@
       "PowerShell(winget install --id OpenJS.NodeJS.LTS -e --accept-package-agreements --accept-source-agreements)",
       "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node -v; npm -v)",
       "Bash(npm -v)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls -la '/c/Users/ryan_/.claude/projects/C--Users-ryan--Desktop-Notes-Projects-portfolio/memory/' 2>&1)"
     ]
   }
 }
