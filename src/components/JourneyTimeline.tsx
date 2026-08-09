@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function JourneyTimeline() {
   return (
-    <div className="flex flex-col gap-14 border-l border-border pl-8 sm:pl-10">
+    <div className="flex flex-col gap-6 border-l border-border pl-8 sm:pl-10">
       {journey.map((beat, i) => (
         <Reveal key={beat.slug} delay={i * 100} className="relative">
           <span className="absolute -left-[41px] top-1.5 h-3 w-3 rounded-full border-2 border-background bg-accent sm:-left-[49px]" />

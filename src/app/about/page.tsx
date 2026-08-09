@@ -13,15 +13,30 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      <Section title="About">
+      <Section title="About Me">
         <Reveal>
-          <p className="max-w-3xl font-heading text-2xl font-medium leading-snug sm:text-3xl">
-            {profile.thesis}
-          </p>
+          <div className="max-w-2xl text-lg leading-relaxed text-muted">
+            <p>
+              I&apos;m a second-year student at Drexel University from Los Angeles, California. I
+              DJ for events, play soccer, and spend time at the gym. I&apos;m interested in how
+              people think, create, and make decisions. These areas teach me to read a room,
+              adapt, and stay consistent over time.
+            </p>
+            <p>
+              I became interested in computer science early, but over time my focus shifted. I
+              realized that building technology is only half the problem. The other half is
+              understanding the people it affects and the values we embed into it.
+            </p>
+            <p>
+              Instead of following a traditional major like CS or Psychology, I designed my own
+              major through the Pennoni Honors College, called Human-Centered Artificial
+              Intelligence.
+            </p>
+          </div>
         </Reveal>
       </Section>
 
-      <Section>
+      <Section title="My HCAI Journey">
         <JourneyTimeline />
       </Section>
 

@@ -3,9 +3,9 @@
 :root {
   --background: #f6ebdf;
   --foreground: #302b27;
-  --accent: #9b8976;
+  --accent: #5a4a3a;
   --cta: #673822;
-  --muted: #9ba2a6;
+  --muted: #4b5563;
   --border: #e3d6c6;
 }
 
@@ -16,9 +16,8 @@
   --color-cta: var(--cta);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-bodoni-moda);
+  --font-heading: var(--font-eb-garamond);
 }
 
 html {
@@ -28,6 +27,15 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-lora), Georgia, "Times New Roman", serif;
+}
+
+main p {
+  margin-bottom: 1.25rem;
+}
+
+main p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes fade-in-up {

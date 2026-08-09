@@ -24,7 +24,7 @@ export default function Nav() {
           ryan monemian
         </Link>
 
-        <ul className="hidden gap-8 text-sm sm:flex">
+        <ul className="hidden gap-8 font-mono text-sm sm:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -42,7 +42,7 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="text-sm text-muted sm:hidden"
+          className="font-mono text-sm text-muted sm:hidden"
           aria-expanded={open}
           aria-label="Toggle menu"
         >
@@ -51,7 +51,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-border px-6 py-3 text-sm sm:hidden">
+        <ul className="flex flex-col gap-1 border-t border-border px-6 py-3 font-mono text-sm sm:hidden">
           {links.map((link) => (
             <li key={link.href}>
               <Link

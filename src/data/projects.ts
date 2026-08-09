@@ -10,6 +10,9 @@ export const projects: Project[] = [
     featured: true,
     timeframe: "July 2026 to August 2026",
     tech: ["Python", "scikit-learn", "Fairlearn", "pandas"],
+    links: [
+      { label: "View on GitHub", href: "https://github.com/ryanmonemian/fairlearn-bias-audit" },
+    ],
     problem:
       "Recidivism prediction models inform bail, sentencing, and parole decisions. They are trained on historical arrest data. So they do not just reflect bias in policing; they encode that bias as a risk score and present discrimination as objective. I wanted to audit one the way an organization would actually be asked to evaluate it, using the metrics they would realistically have to report.",
     context:
@@ -30,6 +33,7 @@ export const projects: Project[] = [
     featured: true,
     timeframe: "April 2026 to May 2026",
     tech: ["Python", "OpenAI API", "Streamlit", "SQLite"],
+    links: [{ label: "View on GitHub", href: "https://github.com/ryanmonemian/redTeamTool" }],
     problem:
       "Model safety depends on refusals holding up under pressure. But a refusal is trained behavior, not a hard boundary. If you do not know how it fails, you are trusting a system you have never actually tested. An adversarial user will find the failure mode before you do.",
     context:
@@ -50,6 +54,9 @@ export const projects: Project[] = [
     featured: true,
     timeframe: "December 2025 to January 2026",
     tech: ["Python", "LangChain", "OpenAI API", "FAISS", "Streamlit"],
+    links: [
+      { label: "View on GitHub", href: "https://github.com/ryanmonemian/MULTIPLE-PDF-CHAT" },
+    ],
     problem:
       "Ungrounded answers from a language model hallucinate with total confidence. I had already watched models cause real harm through confidently wrong outputs. In a document Q&A context, a wrong answer that sounds right is worse than no answer at all, because it is indistinguishable from a correct one unless you independently check the source.",
     context:
