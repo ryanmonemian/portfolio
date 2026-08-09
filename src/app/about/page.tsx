@@ -23,12 +23,7 @@ export default function AboutPage() {
               adapt, and stay consistent over time.
             </p>
             <p>
-              I became interested in computer science early, but over time my focus shifted. I
-              realized that building technology is only half the problem. The other half is
-              understanding the people it affects and the values we embed into it.
-            </p>
-            <p>
-              Instead of following a traditional major like CS or Psychology, I designed my own
+              I became interested in computer science early, but over time my focus shifted. Instead of following a traditional major like CS or Psychology, I designed my own
               major through the Pennoni Honors College, called Human-Centered Artificial
               Intelligence.
             </p>
