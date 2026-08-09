@@ -5,7 +5,7 @@ export default function Section({
   title,
   children,
 }: {
-  id: string;
+  id?: string;
   title?: string;
   children: ReactNode;
 }) {

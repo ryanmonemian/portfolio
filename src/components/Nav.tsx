@@ -1,29 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-mono text-sm font-semibold tracking-tight">
+        <Link href="/" className="font-mono text-sm font-semibold tracking-tight">
           ryan monemian
-        </a>
+        </Link>
 
-        <ul className="hidden gap-8 text-sm text-muted sm:flex">
+        <ul className="hidden gap-8 text-sm sm:flex">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="transition-colors hover:text-foreground">
+              <Link
+                href={link.href}
+                className={`transition-colors hover:text-foreground ${
+                  isActive(link.href) ? "text-foreground" : "text-muted"
+                }`}
+              >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -40,16 +51,18 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-border px-6 py-3 text-sm text-muted sm:hidden">
+        <ul className="flex flex-col gap-1 border-t border-border px-6 py-3 text-sm sm:hidden">
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 transition-colors hover:text-foreground"
+                className={`block py-2 transition-colors hover:text-foreground ${
+                  isActive(link.href) ? "text-foreground" : "text-muted"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

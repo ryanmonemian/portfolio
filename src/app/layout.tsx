@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { profile } from "@/data/profile";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ryan Monemian — Software Engineer",
-  description: "Portfolio of Ryan Monemian, a software engineer building thoughtful products.",
+  title: `${profile.name} — ${profile.headline}`,
+  description: profile.thesis,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
