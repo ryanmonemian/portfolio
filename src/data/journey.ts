@@ -27,6 +27,6 @@ export const journey: JourneyBeat[] = [
     slug: "the-response",
     label: "04: Response",
     title: "A major that did not exist yet",
-    body: "No existing major let me hold all of this at once: the technical grounding to build these systems, the ethical framework to interrogate them, and the design discipline to make them serve people instead of managing them. So I built one myself. Human-Centered AI combines CS foundations, AI ethics, and HCI into a single course of study, and every project I have taken on since has tested the same question: does it make people more capable of thinking for themselves, or less?",
+    body: "No existing major let me hold all of this at once; the technical grounding to build these systems, the ethical framework to interrogate them, and the design discipline to make them serve people instead of managing them. So I built one myself. Human-Centered AI combines CS foundations, AI ethics, and HCI into a single course of study, and every project I have taken on since has tested the same question: does it make people more capable of thinking for themselves, or less?",
   },
 ];

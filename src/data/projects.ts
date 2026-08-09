@@ -8,8 +8,8 @@ export const projects: Project[] = [
       "What happens when a predictive system makes decisions about people's freedom.",
     category: "AI Ethics",
     featured: true,
-    timeframe: "2024",
-    tech: ["Python", "Fairlearn", "scikit-learn", "pandas"],
+    timeframe: "July 2026 to August 2026",
+    tech: ["Python", "scikit-learn", "Fairlearn", "pandas"],
     problem:
       "Recidivism prediction models inform bail, sentencing, and parole decisions. They are trained on historical arrest data. So they do not just reflect bias in policing; they encode that bias as a risk score and present discrimination as objective. I wanted to audit one the way an organization would actually be asked to evaluate it, using the metrics they would realistically have to report.",
     context:
@@ -28,8 +28,8 @@ export const projects: Project[] = [
       "Safety refusals are trained behavior, not guarantees. I built a tool to find out how and why they break.",
     category: "AI Safety",
     featured: true,
-    timeframe: "2024",
-    tech: ["Python", "OpenAI API", "Prompt engineering", "Evaluation harness"],
+    timeframe: "April 2026 to May 2026",
+    tech: ["Python", "OpenAI API", "Streamlit", "SQLite"],
     problem:
       "Model safety depends on refusals holding up under pressure. But a refusal is trained behavior, not a hard boundary. If you do not know how it fails, you are trusting a system you have never actually tested. An adversarial user will find the failure mode before you do.",
     context:
@@ -48,7 +48,7 @@ export const projects: Project[] = [
       "Grounding answers in source documents closes the exact gap where hallucination lives.",
     category: "Applied AI",
     featured: true,
-    timeframe: "2023",
+    timeframe: "December 2025 to January 2026",
     tech: ["Python", "LangChain", "OpenAI API", "FAISS", "Streamlit"],
     problem:
       "Ungrounded answers from a language model hallucinate with total confidence. I had already watched models cause real harm through confidently wrong outputs. In a document Q&A context, a wrong answer that sounds right is worse than no answer at all, because it is indistinguishable from a correct one unless you independently check the source.",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       "Real data pipelines, real institutional constraints, and stakeholders who were never going to read a technical spec.",
     category: "Data Systems",
     featured: true,
-    timeframe: "2023",
+    timeframe: "March 2026 to Present",
     tech: ["GIS", "SQL", "Power BI", "ETL"],
     problem:
       "Campus safety decisions were being made on data that was siloed, outdated, or hard to access. The operational version of every AI harm I had been studying; a system making decisions without a clear picture of the people it affects.",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
       "AI literacy should not be a prerequisite for AI safety.",
     category: "Accessibility",
     featured: false,
-    timeframe: "2023",
+    timeframe: "October 2023 to June 2024",
     tech: ["Workshop design", "Curriculum development"],
     problem:
       "The people most exposed to AI driven harm, things like scams, misinformation, and opaque decision systems, are often the least equipped to recognize when a system is working against them. Particularly older adults without a technical background.",
@@ -105,17 +105,17 @@ export const projects: Project[] = [
     slug: "independent-research",
     title: "Independent Research: Algorithmic Bias & Predictive Policing",
     oneLiner:
-      "The thread connecting bias audits, red teaming, and hallucination: systems optimized without the human context that should have shaped them.",
+      "The thread connecting bias audits, red teaming, and hallucination; systems optimized without the human context that should have shaped them.",
     category: "Research",
     featured: false,
-    timeframe: "2023 to 2024",
+    timeframe: "January 2026 to March 2026",
     tech: ["Literature review", "Policy analysis"],
     problem:
       "Individual case studies, a biased model here, a hallucinated fact there, read as isolated incidents unless you look at them side by side. Which is exactly how they tend to avoid real scrutiny.",
     context:
       "I synthesized research across algorithmic bias, predictive policing, and the cognitive effects of generative AI to test whether a common pattern actually held across all three.",
     process:
-      "I reviewed existing literature and connected findings across domains that are usually studied separately: fairness in machine learning, criminal justice technology, and human and AI interaction.",
+      "I reviewed existing literature and connected findings across domains that are usually studied separately; fairness in machine learning, criminal justice technology, and human and AI interaction.",
     tradeoffs:
       "Research at this scope trades depth for breadth. The wider the pattern I tried to trace, the less expertise I could claim in any single domain along the way.",
     outcome:

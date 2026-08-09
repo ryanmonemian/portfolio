@@ -6,7 +6,7 @@ import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: `About — ${profile.name}`,
+  title: "About",
   description: profile.thesis,
 };
 
@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main className="flex-1">
       <Section title="About">
         <Reveal>
-          <p className="max-w-3xl text-2xl font-medium leading-snug sm:text-3xl">
+          <p className="max-w-3xl font-heading text-2xl font-medium leading-snug sm:text-3xl">
             {profile.thesis}
           </p>
         </Reveal>

@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <h3
-        className={`font-semibold transition-colors group-hover:text-accent ${
+        className={`font-heading font-semibold transition-colors group-hover:text-accent ${
           project.featured ? "text-lg" : "text-base"
         }`}
       >
@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{project.oneLiner}</p>
 
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
-        Read the case study
+        View project
         <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
           →
         </span>

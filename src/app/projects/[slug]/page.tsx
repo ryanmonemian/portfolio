@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import type { Project } from "@/data/types";
 import Section from "@/components/Section";
@@ -19,7 +18,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   return {
-    title: `${project.title} — ${profile.name}`,
+    title: project.title,
     description: project.oneLiner,
   };
 }
@@ -59,14 +58,16 @@ export default async function ProjectCaseStudyPage({
             </span>
             <span className="font-mono text-xs text-muted">{project.timeframe}</span>
           </div>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">{project.title}</h1>
+          <h1 className="mt-3 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
+            {project.title}
+          </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">{project.oneLiner}</p>
 
           <ul className="mt-6 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <li
                 key={t}
-                className="rounded-full bg-white/5 px-3 py-1 font-mono text-xs text-muted"
+                className="rounded-full bg-foreground/5 px-3 py-1 font-mono text-xs text-muted"
               >
                 {t}
               </li>
@@ -88,10 +89,10 @@ export default async function ProjectCaseStudyPage({
         </div>
 
         <div className="mt-20 border-t border-border pt-8">
-          <p className="text-sm text-muted">Next case study</p>
+          <p className="text-sm text-muted">Next project</p>
           <Link
             href={`/projects/${next.slug}`}
-            className="mt-2 inline-flex items-center gap-1 text-xl font-semibold transition-colors hover:text-accent"
+            className="mt-2 inline-flex items-center gap-1 font-heading text-xl font-semibold transition-colors hover:text-accent"
           >
             {next.title} →
           </Link>

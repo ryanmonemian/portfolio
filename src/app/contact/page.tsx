@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: `Contact — ${profile.name}`,
+  title: "Contact",
   description: `Get in touch with ${profile.name} about ${profile.goalRoles.join(", ")} roles.`,
 };
 
@@ -20,7 +20,9 @@ export default function ContactPage() {
       <Section title="Contact">
         <div className="max-w-2xl">
           <Reveal>
-            <h1 className="text-2xl font-semibold sm:text-3xl">Let&apos;s work together.</h1>
+            <h1 className="font-heading text-2xl font-semibold sm:text-3xl">
+              Let&apos;s work together.
+            </h1>
             <p className="mt-4 text-lg text-muted">
               I&apos;m looking for roles in {profile.goalRoles.join(", ")}. If you&apos;re working
               on any of that, or just want to talk through a hard tradeoff in a system you&apos;re
@@ -57,7 +59,7 @@ export default function ContactPage() {
           {focusAreas.map((area, i) => (
             <Reveal key={area.title} delay={i * 80}>
               <div className="rounded-2xl border border-border p-6">
-                <h3 className="font-semibold">{area.title}</h3>
+                <h3 className="font-heading font-semibold">{area.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{area.description}</p>
               </div>
             </Reveal>
