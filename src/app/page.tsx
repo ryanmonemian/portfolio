@@ -61,17 +61,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Section>
-        <Reveal>
-          <p className="max-w-3xl text-lg leading-relaxed text-muted sm:text-xl">
-            I work to regulate and build human-centered AI, focusing on systems designed to
-            enhance human agency and creativity rather than erode it. My work sits at the
-            intersection of CS, AI ethics, and HCI. I want to make sure AI expands human potential
-            instead of replacing it.
-          </p>
-        </Reveal>
-      </Section>
-
       <Section title="Selected work">
         <div className="grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((project, i) => (
