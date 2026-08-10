@@ -72,6 +72,13 @@ export default function Home() {
               capable of without replacing their own thinking, creativity, and judgment.
             </p>
           </div>
+
+          <Link
+            href="/about"
+            className="mt-6 inline-flex text-sm font-medium text-accent hover:underline"
+          >
+            Read my path →
+          </Link>
         </Reveal>
       </Section>
 
