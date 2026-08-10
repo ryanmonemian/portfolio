@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Geist_Mono, EB_Garamond, Lora } from "next/font/google";
+import { EB_Garamond, Lora } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { profile } from "@/data/profile";
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
@@ -29,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${ebGaramond.variable} ${lora.variable} h-full antialiased`}
+      className={`${ebGaramond.variable} ${lora.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Nav />

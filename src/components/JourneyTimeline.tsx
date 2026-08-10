@@ -11,9 +11,15 @@ export default function JourneyTimeline() {
             {beat.label}
           </p>
           <h3 className="font-heading text-xl font-semibold sm:text-2xl">{beat.title}</h3>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            {beat.body}
-          </p>
+          <div
+            className={`mt-3 max-w-2xl text-base leading-relaxed sm:text-lg ${
+              beat.bodyColor === "foreground" ? "text-foreground" : "text-muted"
+            }`}
+          >
+            {beat.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
         </Reveal>
       ))}
     </div>

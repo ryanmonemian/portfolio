@@ -4,7 +4,7 @@ export const profile = {
   name: "Ryan Monemian",
   headline: "Building AI that extends judgment instead of replacing it.",
   thesis:
-    "I work to regulate and build human-centered AI, focusing on systems designed to enhance human agency and creativity rather than erode it. My work sits at the intersection of CS, AI ethics, and HCI. I want to make sure AI expands human potential instead of replacing it.",
+    "I work to regulate and build human-centered AI, focusing on systems designed to enhance human agency and creativity rather than erode it. My work sits at the intersection of CS, AI ethics, and Human-Computer Interaction. I want to make sure AI expands human potential instead of replacing it.",
   goalRoles: ["Trust & Safety Engineering", "AI Governance", "Content Moderation"],
   email: "ryanmonemian@gmail.com",
   github: "github.com/ryanmonemian",

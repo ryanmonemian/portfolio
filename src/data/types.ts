@@ -2,7 +2,9 @@ export type JourneyBeat = {
   slug: string;
   label: string;
   title: string;
-  body: string;
+  body: string[];
+  /** Body text color; defaults to muted if omitted. */
+  bodyColor?: "muted" | "foreground";
 };
 
 export type ProjectCategory =

@@ -55,6 +55,26 @@ export default function Home() {
         </div>
       </section>
 
+      <Section title="Why Human-Centered AI">
+        <Reveal>
+          <div className="max-w-3xl text-lg leading-relaxed text-foreground">
+            <p>
+              I became interested in AI because of what it could add to how people think and
+              create. But I also started noticing people relying on generated answers without
+              thinking through them, and problems like bias and hallucination showing how easily
+              these systems influence decisions.
+            </p>
+            <p>
+              Those questions pushed me beyond treating AI as only a technical problem. Through
+              Pennoni at Drexel, I created Human-Centered AI to combine computer science, AI
+              ethics, and human-computer interaction. I am still figuring out where this path will
+              take me; however, the goal remains the same. I want AI to expand what people are
+              capable of without replacing their own thinking, creativity, and judgment.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
       <Section title="Selected work">
         <div className="grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((project, i) => (
