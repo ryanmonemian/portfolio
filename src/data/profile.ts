@@ -9,6 +9,8 @@ export const profile = {
   email: "ryanmonemian@gmail.com",
   github: "github.com/ryanmonemian",
   linkedin: "linkedin.com/in/ryan-monemian",
+  location: "Philadelphia, PA 19104",
+  phone: "661-714-7863",
 } as const;
 
 export const focusAreas: FocusArea[] = [

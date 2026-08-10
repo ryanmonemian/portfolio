@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
@@ -20,8 +21,8 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-accent/50 bg-background/80 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-mono text-sm font-semibold tracking-tight">
-          ryan monemian
+        <Link href="/" className="font-heading text-lg font-semibold tracking-tight">
+          Ryan Monemian
         </Link>
 
         <ul className="hidden gap-8 font-mono text-sm sm:flex">

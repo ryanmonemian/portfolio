@@ -26,17 +26,17 @@ export default function ProjectsPage() {
       <Section title="Projects">
         <div className="grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 80}>
+            <Reveal key={project.slug} delay={i * 80} className="h-full">
               <ProjectCard project={project} />
             </Reveal>
           ))}
         </div>
       </Section>
 
-      <Section title="Also">
+      <Section title="Supporting Work">
         <div className="grid gap-6 sm:grid-cols-2">
           {supportingProjects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 80}>
+            <Reveal key={project.slug} delay={i * 80} className="h-full">
               <ProjectCard project={project} />
             </Reveal>
           ))}

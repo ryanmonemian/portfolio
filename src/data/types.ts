@@ -21,7 +21,7 @@ export type Project = {
   featured: boolean;
   timeframe: string;
   tech: string[];
-  links?: { label: string; href: string }[];
+  links?: { label: string; href: string; icon: "github" | "drive" | "arcgis" }[];
   /** The harm, risk, or failure mode this project responds to. */
   problem: string;
   /** The real-world constraints shaping the design (org, technical, ethical). */

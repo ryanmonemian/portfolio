@@ -11,7 +11,11 @@ export const projects: Project[] = [
     timeframe: "July 2026 to August 2026",
     tech: ["Python", "scikit-learn", "Fairlearn", "pandas"],
     links: [
-      { label: "View on GitHub", href: "https://github.com/ryanmonemian/fairlearn-bias-audit" },
+      {
+        label: "View on GitHub",
+        href: "https://github.com/ryanmonemian/fairlearn-bias-audit",
+        icon: "github",
+      },
     ],
     problem:
       "Recidivism prediction models inform bail, sentencing, and parole decisions. They are trained on historical arrest data. So they do not just reflect bias in policing; they encode that bias as a risk score and present discrimination as objective. I wanted to audit one the way an organization would actually be asked to evaluate it, using the metrics they would realistically have to report.",
@@ -33,7 +37,13 @@ export const projects: Project[] = [
     featured: true,
     timeframe: "April 2026 to May 2026",
     tech: ["Python", "OpenAI API", "Streamlit", "SQLite"],
-    links: [{ label: "View on GitHub", href: "https://github.com/ryanmonemian/redTeamTool" }],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/ryanmonemian/redTeamTool",
+        icon: "github",
+      },
+    ],
     problem:
       "Model safety depends on refusals holding up under pressure. But a refusal is trained behavior, not a hard boundary. If you do not know how it fails, you are trusting a system you have never actually tested. An adversarial user will find the failure mode before you do.",
     context:
@@ -55,7 +65,11 @@ export const projects: Project[] = [
     timeframe: "December 2025 to January 2026",
     tech: ["Python", "LangChain", "OpenAI API", "FAISS", "Streamlit"],
     links: [
-      { label: "View on GitHub", href: "https://github.com/ryanmonemian/MULTIPLE-PDF-CHAT" },
+      {
+        label: "View on GitHub",
+        href: "https://github.com/ryanmonemian/MULTIPLE-PDF-CHAT",
+        icon: "github",
+      },
     ],
     problem:
       "Ungrounded answers from a language model hallucinate with total confidence. I had already watched models cause real harm through confidently wrong outputs. In a document Q&A context, a wrong answer that sounds right is worse than no answer at all, because it is indistinguishable from a correct one unless you independently check the source.",
@@ -72,17 +86,17 @@ export const projects: Project[] = [
     slug: "drexel-public-safety-gis-bi",
     title: "GIS/BI Co-op, Drexel Public Safety",
     oneLiner:
-      "Real data pipelines, real institutional constraints, and stakeholders who were never going to read a technical spec.",
+      "Developed a real-time data pipeline and Power BI dashboard for dispatchers working inside legacy systems and tight constraints.",
     category: "Data Systems",
     featured: true,
     timeframe: "March 2026 to Present",
     tech: ["GIS", "SQL", "Power BI", "ETL"],
     problem:
-      "Campus safety decisions were being made on data that was siloed, outdated, or hard to access. The operational version of every AI harm I had been studying; a system making decisions without a clear picture of the people it affects.",
+      "Officers at Drexel Public Safety were making decisions about resource deployment and enforcement based on data scattered across multiple systems. Some information was current, some outdated, some locked in databases that required manual queries. This is the operational version of every AI harm I had been studying; a system making decisions without a clear picture of what's actually happening.",
     context:
-      "Unlike a class project, this one ran inside constraints I did not choose. Legacy systems I could not simply replace, dispatchers and other staff without a technical background as the actual end users, and data sensitivity rules that limited what could be surfaced and to whom.",
+      "Unlike a class project, this one ran inside constraints I did not choose. Legacy systems I could not simply replace, officers without a technical background as the actual end users, and data sensitivity rules that limited what could be surfaced and to whom.",
     process:
-      "I built GIS and BI pipelines that integrated live and historical safety data into dashboards designed for staff who needed an answer in seconds, not analysts who wanted to explore a dataset at their own pace. I developed an asynchronous Python data pipeline using AIOHTTP and AsyncIO that extracted and merged CAD and case incident data from Drexel Public Safety's REST API, pulling 7,000 plus records per month in under 90 seconds.",
+      "I built two connected pieces. First, an asynchronous Python data pipeline using AIOHTTP and AsyncIO that extracted and merged CAD and case incident data from Drexel Public Safety's internal REST APIs, processing 7,000 plus records per month in under 90 seconds. Second, an interactive Power BI dashboard that visualizes 600 plus incidents by temporal patterns, call volume, and incident categories. The dashboard is designed so officers get answers in seconds, not analysts exploring datasets at their own pace. When deployed, it will let them see patterns that were previously invisible because the data was kept separate.",
     tradeoffs:
       "Transparency and usability pulled against privacy at almost every decision. Showing dispatchers more data made them faster, but it raised the stakes if that data were ever exposed or misused. Elegant technical solutions kept losing to what the legacy infrastructure and budget could actually support. Design thinking, it turned out, is mostly the work of negotiating constraints you did not choose.",
     outcome:
@@ -92,41 +106,55 @@ export const projects: Project[] = [
     slug: "techtogether-digital-literacy",
     title: "TechTogether Digital Literacy",
     oneLiner:
-      "AI literacy should not be a prerequisite for AI safety.",
+      "Taught 20+ seniors how to text, FaceTime, and use Instagram so they could actually connect with their families; learned that technology is secondary to the relationships it enables.",
     category: "Accessibility",
     featured: false,
     timeframe: "October 2023 to June 2024",
     tech: ["Workshop design", "Curriculum development"],
+    links: [
+      {
+        label: "View Curriculum",
+        href: "https://drive.google.com/drive/folders/1tVDsOt3iHtzTE4167wG4HHg2cIk1NZty",
+        icon: "drive",
+      },
+    ],
     problem:
-      "The people most exposed to AI driven harm, things like scams, misinformation, and opaque decision systems, are often the least equipped to recognize when a system is working against them. Particularly older adults without a technical background.",
+      "Seniors were locked out of how their families communicate. If you can't send a photo through text or message on Instagram, you can't share a memory with your grandkid. If you don't understand email or FaceTime, you lose the ability to express yourself and stay connected across the generational gap.",
     context:
-      "I designed and taught workshops for learners with no assumed computing background, primarily seniors.",
+      "Teaching non-technical people without overwhelming them was a constant tension. Simplify too much and you leave them unprepared for new tools that appear. Keep too much in and you lose the room entirely. I had to figure out how to teach so the skills actually stuck, which meant practice runs during sessions and handwritten notes instead of just digital guides.",
     process:
-      "I built curriculum that explained AI concepts through concrete, everyday analogies rather than technical vocabulary. The goal was building enough intuition to recognize risk rather than enough knowledge to write code.",
+      "An 8-session curriculum covering texting (vocabulary and utilities), adding contacts, FaceTime, camera and photos, email, internet browsing, basic accessibility settings, and Instagram (posts, stories, browsing, DMs, and how to tailor content for different audiences). The focus was teaching people to adapt to how their families actually communicate, not forcing them to learn in one generic way.",
     tradeoffs:
-      "Simplifying without condescending was a constant tension. Strip out too much nuance and people are left less equipped to spot new risks on their own. Keep too much in and you lose the room entirely.",
+      "Accessibility and simplicity pulled against completeness. Teaching to one cultural or age context didn't work for everyone. Handwritten notes took time but worked better than digital guides.",
     outcome:
-      "This work reframed who counts as a stakeholder in Human-Centered AI. It is not just the people who use a product; it is everyone exposed to its consequences, including people who will never open a settings menu. Access to understanding is itself a safety issue.",
+      "Access to understanding is itself a safety and connection issue. It is not just about the technology; it is about maintaining voice and agency across generations. Without these skills, people are locked out of how their loved ones express themselves.",
   },
   {
     slug: "independent-research",
-    title: "Independent Research: Algorithmic Bias & Predictive Policing",
+    title: "Independent Research: AI Literacy and Misuse in Education",
     oneLiner:
-      "The thread connecting bias audits, red teaming, and hallucination; systems optimized without the human context that should have shaped them.",
+      "Researched why schools ban AI instead of teaching responsible use; found that without guidance to extend yourself with the tool, people use it in ways that erase their own voice and thinking.",
     category: "Research",
     featured: false,
     timeframe: "January 2026 to March 2026",
     tech: ["Literature review", "Policy analysis"],
+    links: [
+      {
+        label: "View ArcGIS Storymap",
+        href: "https://storymaps.arcgis.com/stories/464b69f5c6e34a02a0c6828fc14ce5e5",
+        icon: "arcgis",
+      },
+    ],
     problem:
-      "Individual case studies, a biased model here, a hallucinated fact there, read as isolated incidents unless you look at them side by side. Which is exactly how they tend to avoid real scrutiny.",
+      "I researched how people misunderstand and misuse AI. Most people treat it as a shortcut instead of a tool to think with. I looked at why teachers avoid it for students, how it gets used as a replacement for thinking rather than an enhancement. I also examined how AI can flatten people's voice, agency, and style when used carelessly. The core insight: AI literacy is not just technical knowledge; it is understanding what AI actually does and does not do, and how to use it to extend your thinking instead of outsourcing it or losing yourself in the process.",
     context:
-      "I synthesized research across algorithmic bias, predictive policing, and the cognitive effects of generative AI to test whether a common pattern actually held across all three.",
+      "I synthesized research across AI fundamentals, education policy, and how generative AI is being adopted (and banned) in schools to understand why institutions avoid teaching responsible use instead of just prohibiting it.",
     process:
-      "I reviewed existing literature and connected findings across domains that are usually studied separately; fairness in machine learning, criminal justice technology, and human and AI interaction.",
+      "I reviewed existing literature and connected findings across domains usually studied separately; AI education, the psychology of tool adoption, and institutional responses to technological disruption.",
     tradeoffs:
-      "Research at this scope trades depth for breadth. The wider the pattern I tried to trace, the less expertise I could claim in any single domain along the way.",
+      "Research at this scope trades depth for breadth. The wider the pattern I tried to trace, the less expertise I could claim in any single domain.",
     outcome:
-      "This is the theoretical backbone underneath every other project. The failures are not isolated bugs; they are the predictable output of systems optimized for a metric that left the human context out. That systems level view is what I bring to governance and safety work, rather than a single technical fix.",
+      "This is the foundation underneath my thinking about AI literacy and responsibility. The failures are not bugs; they are the predictable output of institutions afraid to teach, leaving people without guidance on how to actually use AI well.",
   },
 ];
 

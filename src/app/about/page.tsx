@@ -17,10 +17,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="max-w-2xl text-lg leading-relaxed text-muted">
             <p>
-              I&apos;m a second-year student at Drexel University from Los Angeles, California. I
-              DJ for events, play soccer, and spend time at the gym. I&apos;m interested in how
-              people think, create, and make decisions. These areas teach me to read a room,
-              adapt, and stay consistent over time.
+              I&apos;m a second-year student at Drexel University from Los Angeles, California. I DJ for events, play soccer, and spend time at the gym. Whether I'm reading a room while DJing, making decisions on the field, or working through a new problem, I've learned to pay attention, adapt, and stay consistent.
             </p>
             <p>
               I became interested in computer science early, but over time my focus shifted. Instead of following a traditional major like CS or Psychology, I designed my own

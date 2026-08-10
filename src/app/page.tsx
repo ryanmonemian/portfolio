@@ -20,7 +20,7 @@ export default function Home() {
         />
 
         <div className="flex-1">
-          <p className="animate-fade-in-up mb-4 font-mono text-sm text-accent">Hi, I&apos;m</p>
+          <p className="animate-fade-in-up mb-4 text-sm text-accent">Hi, I&apos;m</p>
           <h1
             className="animate-fade-in-up font-heading text-4xl font-bold tracking-tight sm:text-6xl"
             style={{ animationDelay: "100ms" }}
@@ -38,25 +38,19 @@ export default function Home() {
             className="animate-fade-in-up mt-8 flex flex-wrap items-center gap-4"
             style={{ animationDelay: "300ms" }}
           >
-            <a
-              href="/assets/RyanMonemianResume.pdf"
-              download
-              className="rounded-full bg-cta px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
-            >
-              Download Resume
-            </a>
-            <Link
-              href="/about"
-              className="rounded-full border border-accent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
-            >
-              Read my journey
-            </Link>
             <Link
               href="/projects"
-              className="text-sm font-medium text-accent hover:underline"
+              className="rounded-full bg-cta px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
               See the work
             </Link>
+            <a
+              href="/assets/RyanMonemianResume.pdf"
+              download
+              className="rounded-full border border-accent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       </section>
@@ -64,7 +58,7 @@ export default function Home() {
       <Section title="Selected work">
         <div className="grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 80}>
+            <Reveal key={project.slug} delay={i * 80} className="h-full">
               <ProjectCard project={project} />
             </Reveal>
           ))}

@@ -2,16 +2,22 @@ import type { Metadata } from "next";
 import { profile, focusAreas } from "@/data/profile";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import LinkIcon, { type LinkIconName } from "@/components/LinkIcon";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: `Get in touch with ${profile.name} about ${profile.goalRoles.join(", ")} roles.`,
 };
 
-const socials = [
-  { label: "Email", href: `mailto:${profile.email}`, value: profile.email },
-  { label: "GitHub", href: `https://${profile.github}`, value: profile.github },
-  { label: "LinkedIn", href: `https://${profile.linkedin}`, value: profile.linkedin },
+const socials: { icon: LinkIconName; label: string; href: string; value: string }[] = [
+  { icon: "mail", label: "Email", href: `mailto:${profile.email}`, value: profile.email },
+  { icon: "github", label: "GitHub", href: `https://${profile.github}`, value: profile.github },
+  {
+    icon: "linkedin",
+    label: "LinkedIn",
+    href: `https://${profile.linkedin}`,
+    value: profile.linkedin,
+  },
 ];
 
 export default function ContactPage() {
@@ -38,12 +44,13 @@ export default function ContactPage() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-sm"
+                    aria-label={social.label}
+                    className="group flex items-center gap-3 text-sm"
                   >
-                    <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                      {social.label}
+                    <span className="text-muted transition-colors group-hover:text-accent">
+                      <LinkIcon name={social.icon} />
                     </span>
-                    <span className="text-foreground transition-colors hover:text-accent">
+                    <span className="text-foreground transition-colors group-hover:text-accent">
                       {social.value}
                     </span>
                   </a>

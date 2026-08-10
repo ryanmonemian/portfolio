@@ -7,7 +7,7 @@ export default function JourneyTimeline() {
       {journey.map((beat, i) => (
         <Reveal key={beat.slug} delay={i * 100} className="relative">
           <span className="absolute -left-[41px] top-1.5 h-3 w-3 rounded-full border-2 border-background bg-accent sm:-left-[49px]" />
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-widest text-accent">
+          <p className="mb-2 text-xs font-normal uppercase tracking-widest text-accent">
             {beat.label}
           </p>
           <h3 className="font-heading text-xl font-semibold sm:text-2xl">{beat.title}</h3>
