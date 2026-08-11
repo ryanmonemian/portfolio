@@ -5,7 +5,7 @@ export const projects: Project[] = [
     slug: "fairlearn-bias-audit",
     title: "Recidivism Bias Audit",
     oneLiner:
-      "What happens when a predictive system makes decisions about people's freedom.",
+      "What happens when a predictive system helps make decisions about someone’s freedom?",
     category: "AI Ethics",
     featured: true,
     timeframe: "July 2026 to August 2026",
@@ -17,16 +17,47 @@ export const projects: Project[] = [
         icon: "github",
       },
     ],
-    problem:
-      "Recidivism prediction models inform bail, sentencing, and parole decisions. They are trained on historical arrest data. So they do not just reflect bias in policing; they encode that bias as a risk score and present discrimination as objective. I wanted to audit one the way an organization would actually be asked to evaluate it, using the metrics they would realistically have to report.",
+    problem: [
+      `Recidivism prediction systems inform bail, sentencing, and parole decisions. 
+      They appear objective because they're produced by a model, but that does not 
+      mean the errors are distributed equally across groups. I wanted to understand 
+      what that disparity looks like and where the model gets it wrong.`,
+
+      `I wanted to understand what happens when we look past overall accuracy and 
+      ask who a model gets wrong. Instead of treating fairness as an abstract idea, 
+      I audited a recidivism model across racial groups and compared the results with 
+      the real COMPAS risk scores.`
+    ],
     context:
-      "Using the ProPublica COMPAS dataset of 6,172 defendants, I independently trained a recidivism model and tested it against the original COMPAS scores.",
-    process:
-      "I measured false positive rates and demographic parity across racial subgroups using Fairlearn. I found that African-American defendants who did not reoffend were wrongly flagged as high risk at a 36.3% false positive rate, compared to 20.2% for Caucasian defendants. Then I tested Fairlearn's ExponentiatedGradient bias mitigation technique to see how much of that gap could actually be closed. Reducing the fairness gap came at a measurable cost to overall accuracy.",
-    tradeoffs:
-      "Fairness metrics conflict with each other. Satisfying demographic parity can violate equalized odds, and satisfying equalized odds can violate demographic parity. Choosing which metric to prioritize is not a technical decision; it is a policy decision wearing a technical costume. The mitigation techniques narrowed some gaps without resolving that underlying tension.",
-    outcome:
-      "A fairness dashboard is necessary, but it is not sufficient. A clean report can hide that someone made an actual choice about which group matters more, which tradeoff to accept, and no one consciously owns it. This is why governance has to sit alongside the metrics rather than downstream of them. This project pulled me toward Trust and Safety and AI governance work.",
+      `Using 6,172 records from the ProPublica COMPAS dataset, I independently trained 
+      a random forest model to predict recidivism. I then audited its outcomes across racial 
+      groups and compared the results with the real COMPAS risk scores.`,
+    process: [
+      `I used Fairlearn to measure false positive rates and other fairness metrics across racial groups. 
+      Among defendants who did not reoffend, African American defendants were incorrectly classified as high 
+      risk at a 36.3 percent false positive rate compared with 20.2 percent for Caucasian defendants.`,
+
+      `I then applied Fairlearn’s ExponentiatedGradient mitigation method to test whether that disparity 
+      could be reduced. The fairness gap narrowed, but overall model accuracy decreased by about 2.5 percentage 
+      points.`,
+    ],
+    tradeoffs: [
+      `Reducing one fairness gap did not make the model universally fair. Different fairness metrics can prioritize 
+      different outcomes, and improving one measure may leave another unresolved.`,
+      
+      `That made the choice of a fairness metric feel larger than a technical decision. The metric determines which 
+      kinds of errors receive more attention and which tradeoffs we are willing to accept. Fairlearn helped me 
+      measure and reduce disparities, but it could not decide which definition of fairness should matter most.`,
+    ],
+    outcome: [
+      `Before this project, I thought identifying bias was mostly a matter of choosing the right fairness metric 
+      and measuring the gap. The audit made me realize that measurement is only the beginning. A model can become 
+      fairer according to one definition while still creating unequal outcomes according to another.`,
+
+      `The harder question is deciding which tradeoffs are acceptable when those errors affect real people. That is 
+      what made me more interested in the connection between technical evaluation, accountability, and the decisions 
+      people make around AI systems.`,
+    ]
   },
   {
     slug: "llm-red-team-tool",
@@ -59,7 +90,7 @@ export const projects: Project[] = [
     slug: "multi-pdf-rag-chatbot",
     title: "Multi-PDF Q&A Chatbot",
     oneLiner:
-      "Grounding answers in source documents closes the exact gap where hallucination lives.",
+      "Exploring how grounding AI responses in source documents can reduce hallucination and improve reliability.",
     category: "Applied AI",
     featured: true,
     timeframe: "December 2025 to January 2026",
@@ -86,7 +117,7 @@ export const projects: Project[] = [
     slug: "drexel-public-safety-gis-bi",
     title: "GIS/BI Co-op, Drexel Public Safety",
     oneLiner:
-      "Developed a real-time data pipeline and Power BI dashboard for dispatchers working inside legacy systems and tight constraints.",
+      "What does good data infrastructure look like when the people using it work inside legacy systems and real operational constraints?",
     category: "Data Systems",
     featured: true,
     timeframe: "March 2026 to Present",
@@ -106,7 +137,7 @@ export const projects: Project[] = [
     slug: "techtogether-digital-literacy",
     title: "TechTogether Digital Literacy",
     oneLiner:
-      "Taught 20+ seniors how to text, FaceTime, and use Instagram so they could actually connect with their families; learned that technology is secondary to the relationships it enables.",
+      "Teaching digital literacy to older adults showed me that the value of technology depends on whether it helps people do what actually matters to them.",
     category: "Accessibility",
     featured: false,
     timeframe: "October 2023 to June 2024",
@@ -133,7 +164,7 @@ export const projects: Project[] = [
     slug: "independent-research",
     title: "Independent Research: AI Literacy and Misuse in Education",
     oneLiner:
-      "Researched why schools ban AI instead of teaching responsible use; found that without guidance to extend yourself with the tool, people use it in ways that erase their own voice and thinking.",
+      "Explored how AI literacy, algorithmic bias, and the way institutions respond to generative AI can shape how people learn and use these systems.",
     category: "Research",
     featured: false,
     timeframe: "January 2026 to March 2026",

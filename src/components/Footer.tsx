@@ -34,13 +34,6 @@ export default function Footer() {
               <LinkIcon name="location" />
               {profile.location}
             </span>
-            <a
-              href={`tel:${profile.phone}`}
-              className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
-            >
-              <LinkIcon name="phone" />
-              {profile.phone}
-            </a>
           </div>
         </div>
 

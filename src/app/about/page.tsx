@@ -17,12 +17,17 @@ export default function AboutPage() {
         <Reveal>
           <div className="max-w-2xl text-lg leading-relaxed text-muted">
             <p>
-              I&apos;m a second-year student at Drexel University from Los Angeles, California. I DJ for events, play soccer, and spend time at the gym. Whether I'm reading a room while DJing, making decisions on the field, or working through a new problem, I've learned to pay attention, adapt, and stay consistent.
+              I&apos;m a second-year student at Drexel University from Los Angeles, California. 
+              Outside of school, I DJ for events, play soccer, and spend time at the gym. Whether I&apos;m reading
+              a room while DJing, anticipating how teammates will move on the field, or reflecting on how I approach 
+              problems, I&apos;ve learned to pay attention to how people think, react, and adapt in different situations.
             </p>
             <p>
-              I became interested in computer science early, but over time my focus shifted. Instead of following a traditional major like CS or Psychology, I designed my own
-              major through the Pennoni Honors College, called Human-Centered Artificial
-              Intelligence.
+              I became interested in computer science early, but as I learned more, I realized the questions I cared 
+              about weren't just technical. I became interested in how people interact with these systems, how they 
+              influence the decisions we make, and what we gain or lose as AI becomes part of our everyday lives. 
+              Understanding these systems meant understanding the people using them. That insight is why I designed my own major 
+              through the Pennoni Honors College, called Human-Centered Artificial Intelligence.
             </p>
           </div>
         </Reveal>
@@ -34,16 +39,9 @@ export default function AboutPage() {
 
       <Section>
         <Reveal>
-          <div className="max-w-2xl rounded-2xl border border-border p-8">
-            <p className="text-lg text-muted">
-              Every project since has tested the same question against something real, not just
-              against a hypothetical.
-            </p>
-            <Link
-              href="/projects"
-              className="mt-4 inline-flex text-sm font-medium text-accent hover:underline"
-            >
-              See how →
+          <div className="mt-10">
+            <Link href="/projects" className="text-sm font-medium text-accent hover:underline">
+              View all projects →
             </Link>
           </div>
         </Reveal>

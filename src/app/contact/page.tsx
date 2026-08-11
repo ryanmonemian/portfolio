@@ -30,9 +30,11 @@ export default function ContactPage() {
               Let&apos;s work together.
             </h1>
             <p className="mt-4 text-lg text-muted">
-              I&apos;m looking for roles in {profile.goalRoles.join(", ")}. If you&apos;re working
-              on any of that, or just want to talk through a hard tradeoff in a system you&apos;re
-              building, my inbox is open.
+              I&apos;m looking for roles in {profile.goalRoles.join(", ")}.
+            </p>
+
+            <p className="mt-4 text-lg text-muted">
+              If something I am working on connects with what you are doing or you'd just like to chat, I would be happy to hear from you.
             </p>
           </Reveal>
 
@@ -64,8 +66,8 @@ export default function ContactPage() {
       <Section title="What I'm looking for">
         <div className="grid gap-6 sm:grid-cols-3">
           {focusAreas.map((area, i) => (
-            <Reveal key={area.title} delay={i * 80}>
-              <div className="rounded-2xl border border-border p-6">
+            <Reveal key={area.title} delay={i * 80} className="h-full">
+              <div className="flex h-full flex-col rounded-2xl border border-border p-6">
                 <h3 className="font-heading font-semibold">{area.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{area.description}</p>
               </div>

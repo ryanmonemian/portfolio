@@ -10,7 +10,15 @@ export const journey: JourneyBeat[] = [
     label: "01: Observation",
     title: "A tool to think with, used as a shortcut",
     body: [
-      "When ChatGPT launched, I watched people around me reach for it the way you would reach for a calculator, not to think through a problem but to skip thinking about it entirely. That gap between using AI as a thinking partner and using it as a shortcut did not feel like a minor detail in how the tool worked; it felt like the whole question I wanted to spend my degree on.",
+      `When ChatGPT was released in late 2022, many people around me saw 
+      it mainly as a shortcut for schoolwork or a path to primarily make profit. 
+      I was more curious about how it could support creativity and expand ideas. 
+      That curiosity pushed me to explore AI independently and learn more about how 
+      the systems work, recognize key patterns, and how to use it responsibly.`,
+
+      `At the same time, I started noticing a tension. A tool that could help people 
+      develop ideas could also make it easier to skip the thinking behind them. I became 
+      interested in where that line was and what happens when support slowly turns into dependence.`,
     ],
   },
   {
@@ -18,15 +26,30 @@ export const journey: JourneyBeat[] = [
     label: "02: Evidence",
     title: "600+ students, and a pattern I could not ignore",
     body: [
-      "I surveyed more than 600 students to test whether what I was noticing was actually real, and the pattern held; rising dependence on AI tools was correlating with measurable declines in the agency and creative confidence students reported feeling in themselves. They were not simply using a new tool differently; they were outsourcing the parts of thinking that used to belong to them, and the data made that impossible for me to write off as just a feeling.",
+    `I wanted to test whether my observations held up at scale, so I surveyed 
+    more than 600 students about their use of AI. Their responses pointed to a 
+    growing reliance on these tools alongside concerns around independent thinking and creativity.`,
+    
+    `The project changed the way I looked at AI adoption. I became less interested in whether people used
+    AI more, and started wondering in what they were letting AI do for them. If these systems are going to 
+    become part of everyday learning and decision making, I think we also have to ask what people should continue practicing for themselves.`,
     ],
   },
   {
     slug: "the-harms",
-    label: "03: Harm",
-    title: "The failures were not hypothetical",
+    label: "03: Questions",
+    title: "The systems themselves were part of the problem",
     body: [
-      "Around the same time, the harms I had been reading about stopped being abstract. DeepSeek refused to acknowledge that Taiwan exists. ChatGPT hallucinated facts with total confidence, stating them as though they had been verified. Gender bias showed up unprompted in outputs, embedded deep enough in training data that no one had to go looking for it. None of these were edge cases; they were the default behavior of systems already deployed at a global scale, built largely without the people affected by them in the room.",
+      `As I learned more, I realized that responsible AI could not depend only on people using the 
+      technology carefully. The systems themselves could hallucinate information, reproduce biases 
+      from their training data, or reflect political and cultural forces in the way they responded. 
+      I'd seen this firsthand with DeepSeek denying Taiwan's independence and ChatGPT hallucinating 
+      and perpetuating gender biases. These issues stem from algorithmic bias in the data used to train them.`,
+
+      `That shifted the question for me. I wanted to understand not only how people should use AI, but how 
+      the systems themselves should be built, evaluated, and governed. If AI is going to influence how people 
+      learn, communicate, and make decisions, then technical performance alone is not enough to determine 
+      whether a system is working well.`,
     ],
   },
   {
@@ -34,7 +57,16 @@ export const journey: JourneyBeat[] = [
     label: "04: Response",
     title: "A major that did not exist yet",
     body: [
-      "No existing major let me hold all of this at once; the technical grounding to build these systems, the ethical framework to interrogate them, and the design discipline to make them serve people instead of managing them. So I built one myself. Human-Centered AI combines CS foundations, AI ethics, and HCI into a single course of study, and every project I have taken on since has tested the same question: does it make people more capable of thinking for themselves, or less?",
+      `The questions I wanted to study did not fit neatly inside one traditional major. Computer science 
+      could help me understand how intelligent systems are built. Ethics and science, technology, and society 
+      could help me examine fairness, accountability, and the forces that shape technology. Psychology and 
+      human computer interaction could help me understand how people think, make decisions, and interact 
+      with the systems around them.`,
+
+      `Through the Pennoni Honors College, I created Human Centered Artificial Intelligence to bring those 
+      perspectives together. I did not want to study AI only as a technical system. I wanted a path that 
+      would let me build and evaluate the technology while also questioning how it should affect the people 
+      who use it.`,
     ],
   },
   {
@@ -43,8 +75,19 @@ export const journey: JourneyBeat[] = [
     title: "Still figuring out what Human-Centered AI can become",
     bodyColor: "foreground",
     body: [
-      "I created this major because I knew the kinds of questions I wanted to spend my time understanding, not because I already knew every answer. Right now, I am especially interested in AI safety, fairness, human interaction with AI systems, and how we decide when technology should support human judgment rather than replace it.",
-      "I expect those interests to keep changing as I learn more. What I want to preserve is the reason I started this path in the first place. AI should remain a tool that expands how people think, create, and make decisions while keeping people at the center of the systems we build.",
+      `Creating the major gave me a direction, not a finished answer. My projects, research, coursework, 
+      and work experience are helping me figure out which problems I want to pursue more deeply and what 
+      Human Centered Artificial Intelligence should look like in practice.`,
+
+      `Right now, I am especially interested in AI safety, algorithmic fairness, human AI interaction, and 
+      trustworthy AI systems. Over time, I want to contribute to both building and regulating AI so that 
+      these systems remain accountable to the people they affect.`,
+
+      `My interests will probably continue to change as I learn more. Right now, I'm focused on learning how 
+      to evaluate and build systems responsibly through my projects, coursework, and work experience. 
+      Eventually, I want to contribute to how we govern and build AI so these systems remain accountable 
+      to the people they affect.`,
+    
     ],
   },
 ];

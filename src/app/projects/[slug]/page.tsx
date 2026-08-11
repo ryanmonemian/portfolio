@@ -29,7 +29,7 @@ const caseStudySections: { key: keyof Project; label: string }[] = [
   { key: "context", label: "The constraints" },
   { key: "process", label: "What I built" },
   { key: "tradeoffs", label: "The tradeoffs" },
-  { key: "outcome", label: "What it proved" },
+  { key: "outcome", label: "What I learned" },
 ];
 
 export default async function ProjectCaseStudyPage({
@@ -94,16 +94,25 @@ export default async function ProjectCaseStudyPage({
         </Reveal>
 
         <div className="mt-12 flex flex-col gap-6">
-          {caseStudySections.map(({ key, label }, i) => (
-            <Reveal key={key} delay={i * 60}>
-              <h2 className="mb-3 text-sm font-normal uppercase tracking-widest text-accent">
-                {label}
-              </h2>
-              <p className="max-w-3xl text-lg leading-relaxed text-muted">
-                {project[key] as string}
-              </p>
-            </Reveal>
-          ))}
+          {caseStudySections.map(({ key, label }, i) => {
+            const displayLabel =
+              project.slug === "fairlearn-bias-audit" && key === "context" ? "The Setup" : label;
+
+            return (
+              <Reveal key={key} delay={i * 60}>
+                <h2 className="mb-3 text-sm font-normal uppercase tracking-widest text-accent">
+                  {displayLabel}
+                </h2>
+                <div className="max-w-3xl text-lg leading-relaxed text-muted">
+                  {Array.isArray(project[key]) ? (
+                    (project[key] as string[]).map((paragraph, j) => <p key={j}>{paragraph}</p>)
+                  ) : (
+                    <p>{project[key] as string}</p>
+                  )}
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
 
         <div className="mt-16 border-t border-border pt-8">

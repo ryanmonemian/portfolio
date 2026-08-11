@@ -25,15 +25,15 @@ export type Project = {
   tech: string[];
   links?: { label: string; href: string; icon: "github" | "drive" | "arcgis" }[];
   /** The harm, risk, or failure mode this project responds to. */
-  problem: string;
+  problem: string | string[];
   /** The real-world constraints shaping the design (org, technical, ethical). */
-  context: string;
+  context: string | string[];
   /** What was actually built or done. */
-  process: string;
+  process: string | string[];
   /** The competing values/goals in tension, and how they were weighed. */
-  tradeoffs: string;
+  tradeoffs: string | string[];
   /** What it proved, and how it changed the author's thinking. */
-  outcome: string;
+  outcome: string | string[];
 };
 
 export type FocusArea = {

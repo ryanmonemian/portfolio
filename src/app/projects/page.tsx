@@ -17,9 +17,11 @@ export default function ProjectsPage() {
     <main className="flex-1">
       <Section>
         <p className="max-w-2xl text-lg text-muted">
-          Each of these started with a harm I wanted to understand, not a technology I wanted to
-          use. The projects below walk through the problem, the constraints I was actually
-          working inside, and what I learned about the tradeoffs.
+          These projects have given me different ways to explore 
+          the questions behind Human-Centered AI. The work below 
+          focuses on the problem I was trying to understand, the 
+          constraints I had to work within, the decisions I made, 
+          and the tradeoffs that shaped the result.
         </p>
       </Section>
 
