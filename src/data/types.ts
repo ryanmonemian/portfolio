@@ -26,8 +26,8 @@ export type Project = {
   links?: { label: string; href: string; icon: "github" | "drive" | "arcgis" }[];
   /** The harm, risk, or failure mode this project responds to. */
   problem: string | string[];
-  /** The real-world constraints shaping the design (org, technical, ethical). */
-  context: string | string[];
+  /** The real-world constraints shaping the design (org, technical, ethical). Omit to skip this section. */
+  context?: string | string[];
   /** What was actually built or done. */
   process: string | string[];
   /** The competing values/goals in tension, and how they were weighed. */

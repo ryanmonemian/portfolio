@@ -32,6 +32,12 @@ const caseStudySections: { key: keyof Project; label: string }[] = [
   { key: "outcome", label: "What I learned" },
 ];
 
+/** Per-project overrides for a section's default label, keyed by "slug:fieldKey". */
+const sectionLabelOverrides: Record<string, string> = {
+  "fairlearn-bias-audit:context": "The Setup",
+  "multi-pdf-rag-chatbot:context": "The goal",
+};
+
 export default async function ProjectCaseStudyPage({
   params,
 }: PageProps<"/projects/[slug]">) {
@@ -94,25 +100,26 @@ export default async function ProjectCaseStudyPage({
         </Reveal>
 
         <div className="mt-12 flex flex-col gap-6">
-          {caseStudySections.map(({ key, label }, i) => {
-            const displayLabel =
-              project.slug === "fairlearn-bias-audit" && key === "context" ? "The Setup" : label;
+          {caseStudySections
+            .filter(({ key }) => project[key] !== undefined)
+            .map(({ key, label }, i) => {
+              const displayLabel = sectionLabelOverrides[`${project.slug}:${key}`] ?? label;
 
-            return (
-              <Reveal key={key} delay={i * 60}>
-                <h2 className="mb-3 text-sm font-normal uppercase tracking-widest text-accent">
-                  {displayLabel}
-                </h2>
-                <div className="max-w-3xl text-lg leading-relaxed text-muted">
-                  {Array.isArray(project[key]) ? (
-                    (project[key] as string[]).map((paragraph, j) => <p key={j}>{paragraph}</p>)
-                  ) : (
-                    <p>{project[key] as string}</p>
-                  )}
-                </div>
-              </Reveal>
-            );
-          })}
+              return (
+                <Reveal key={key} delay={i * 60}>
+                  <h2 className="mb-3 text-sm font-normal uppercase tracking-widest text-accent">
+                    {displayLabel}
+                  </h2>
+                  <div className="max-w-3xl text-lg leading-relaxed text-muted">
+                    {Array.isArray(project[key]) ? (
+                      (project[key] as string[]).map((paragraph, j) => <p key={j}>{paragraph}</p>)
+                    ) : (
+                      <p>{project[key] as string}</p>
+                    )}
+                  </div>
+                </Reveal>
+              );
+            })}
         </div>
 
         <div className="mt-16 border-t border-border pt-8">

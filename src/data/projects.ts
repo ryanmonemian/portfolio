@@ -76,15 +76,20 @@ export const projects: Project[] = [
       },
     ],
     problem:
-      "Model safety depends on refusals holding up under pressure. But a refusal is trained behavior, not a hard boundary. If you do not know how it fails, you are trusting a system you have never actually tested. An adversarial user will find the failure mode before you do.",
-    context:
-      "I needed systematic, repeatable probing instead of isolated jailbreak attempts. A harness that could run structured prompt variations and log exactly where refusal behavior held, degraded, or broke.",
+      "Model safety depends on refusals holding up under pressure. But a refusal is trained behavior, not a hard boundary. If you do not know how it fails, you are trusting a system you have never actually tested. If you do not understand how refusal behavior fails under pressure, you are trusting a safety claim that has not been meaningfully tested.",
     process:
       "I sourced 100 real-world toxic prompts from the LMSYS Toxic-Chat dataset and benchmarked GPT-4o and GPT-4o-mini across hate speech, manipulation, and jailbreak categories. I built an adversarial testing pipeline across five conditions. Prompt engineering alone increased refusal rates from 31% to 76%. I then developed a regex plus LLM classifier that flagged soft refusals in 16 to 25% of responses that pattern matching alone would have missed.",
     tradeoffs:
       "Safety tuning is a tradeoff that cuts both ways, not a setting you can simply turn up. Tune the refusals too aggressively and journalists, researchers, and security professionals get blocked doing ordinary work. Tune them too loosely and harmful requests slip through undetected. There is no threshold that eliminates both failure modes at once, so every refusal setting is a tradeoff that someone has to own.",
-    outcome:
-      "Red teaming is not about breaking things for sport. It is the only way to know what a safety claim is actually worth before someone with worse intentions than a researcher tests it in production.",
+    outcome: [
+      `I started this project thinking model safety would mostly come down to whether a system refused a harmful 
+      request. Testing it made the problem feel much less binary. Prompt structure changed refusal behavior, and 
+      even measuring whether a response counted as a refusal became a challenge of its own.`,
+
+      `It made me more interested in AI safety as an evaluation problem. Before we trust claims about how a 
+      system behaves, we need ways to test those claims under conditions that are closer to how the system may 
+      realistically be challenged.`,
+    ]
   },
   {
     slug: "multi-pdf-rag-chatbot",
@@ -103,15 +108,26 @@ export const projects: Project[] = [
       },
     ],
     problem:
-      "Ungrounded answers from a language model hallucinate with total confidence. I had already watched models cause real harm through confidently wrong outputs. In a document Q&A context, a wrong answer that sounds right is worse than no answer at all, because it is indistinguishable from a correct one unless you independently check the source.",
+      "Language models can generate answers that sound confident even when they are unsupported by the source material. In a document question answering system, that creates a reliability problem. A useful answer should not only sound plausible, but also should be grounded in information the user can trace back to the documents they provided.",
     context:
-      "I needed a system that could answer questions across multiple PDFs while making every answer traceable back to actual source text.",
+      "I wanted the system to answer questions across multiple PDFs while grounding its responses in retrieved source material. It also needed to handle questions whose answers could depend on information spread across different parts of a document.",
     process:
-      "I built a retrieval-augmented generation pipeline. I chunked and embedded the source PDFs, retrieved the passages most relevant to each query, and constrained the model to answer only from that retrieved context with inline citations. I evaluated answer faithfulness using a 10-question RAGAS evaluation and achieved 89 to 95% faithfulness.",
+      `I built a retrieval augmented generation pipeline. I chunked and embedded the source PDFs, 
+      retrieved the passages most relevant to each query, and instructed the model to generate 
+      answers from the retrieved context. Using RAGAS evaluation on a test syllabus, the system 
+      achieved 89% to 95% across 10 questions.`,
     tradeoffs:
       "Grounding turned out to be a dial rather than a switch. Retrieve too narrowly and the model gives incomplete answers whenever a question spans multiple sections. Retrieve too broadly and irrelevant context creeps back in, reopening the door to hallucination. Chunk size and retrieval depth ended up mattering as much as the underlying model.",
-    outcome:
-      "This was the first project where I moved from diagnosing a harm to shipping something that structurally reduces it. Hallucination is not fixed by asking a model to be more careful; it is fixed by changing what the model is allowed to answer from in the first place.",
+    outcome: [
+      `Before this project, I thought grounding was mostly about giving a model better information. 
+      Building the pipeline showed me that retrieval itself shapes the quality of the answer. What gets 
+      retrieved, how much context is included, and how the source material is divided can all change what 
+      the model is able to produce.`,
+      
+      `It made me think about reliability as more than a model problem. The systems around the model matter 
+      too, and improving an AI response often means designing those surrounding systems more carefully rather 
+      than relying on the model alone.`,
+    ]
   },
   {
     slug: "drexel-public-safety-gis-bi",
@@ -122,16 +138,46 @@ export const projects: Project[] = [
     featured: true,
     timeframe: "March 2026 to Present",
     tech: ["GIS", "SQL", "Power BI", "ETL"],
-    problem:
-      "Officers at Drexel Public Safety were making decisions about resource deployment and enforcement based on data scattered across multiple systems. Some information was current, some outdated, some locked in databases that required manual queries. This is the operational version of every AI harm I had been studying; a system making decisions without a clear picture of what's actually happening.",
+    problem: [
+      `Drexel Public Safety relied on information spread across multiple internal systems, which made it harder
+      to see patterns across incidents and reporting data in one place. Accessing and combining that 
+      information also required technical steps that were not practical for the people who needed to 
+      use it regularly.`,
+      `The problem was not simply getting the data into one system. It was making that information useful 
+      to people working in an operational environment where answers needed to be accessible quickly.`,
+    ],
     context:
       "Unlike a class project, this one ran inside constraints I did not choose. Legacy systems I could not simply replace, officers without a technical background as the actual end users, and data sensitivity rules that limited what could be surfaced and to whom.",
-    process:
-      "I built two connected pieces. First, an asynchronous Python data pipeline using AIOHTTP and AsyncIO that extracted and merged CAD and case incident data from Drexel Public Safety's internal REST APIs, processing 7,000 plus records per month in under 90 seconds. Second, an interactive Power BI dashboard that visualizes 600 plus incidents by temporal patterns, call volume, and incident categories. The dashboard is designed so officers get answers in seconds, not analysts exploring datasets at their own pace. When deployed, it will let them see patterns that were previously invisible because the data was kept separate.",
-    tradeoffs:
-      "Transparency and usability pulled against privacy at almost every decision. Showing dispatchers more data made them faster, but it raised the stakes if that data were ever exposed or misused. Elegant technical solutions kept losing to what the legacy infrastructure and budget could actually support. Design thinking, it turned out, is mostly the work of negotiating constraints you did not choose.",
-    outcome:
-      "This project is the reason Human-Centered AI is not just a phrase to me. It is the difference between a pipeline that is technically correct and one that the people it was built for actually use. Institutional constraints are not obstacles to good design; they are part of the design problem itself.",
+    process: [
+      `I built an asynchronous Python pipeline using aiohttp and asyncio to pull and merge CAD and incident data 
+      from internal REST APIs. The pipeline processes more than 7,000 records per month in under 90 seconds and 
+      produces structured data for reporting and analysis.`,
+      
+      `I then designed an interactive Power BI dashboard using the pipeline output to visualize more than 600 
+      incidents across 2025 by temporal patterns, call volume, and incident categories. The dashboard was designed 
+      to make common patterns easier to access without requiring users to manually query or combine the underlying 
+      data.`,
+    ],
+    tradeoffs: [
+      `More visibility into the data could make the dashboard more useful, but public safety information 
+      also created limits around what could be surfaced and who could access it. Technical decisions were 
+      shaped by the systems already in place, which meant the most elegant solution was not always the most 
+      practical one.`,
+      
+      `I also had to balance how much information to show at once. Giving users access to more data can be 
+      useful, but adding too much can make patterns harder to interpret. The goal became making the information 
+      useful without overwhelming the people who would eventually work with it.`,
+    ],
+    
+    outcome: [
+      `Working on a system that other people would eventually rely on changed how I thought about technical 
+      quality. A pipeline can be fast and accurate, but that does not make the full system useful if the 
+      information is difficult to access or does not fit the way people already work.`,
+
+      `I also learned that constraints are not always problems to engineer away. Legacy infrastructure, privacy 
+      requirements, and the needs of nontechnical users shaped the solution just as much as the code did.`,
+    ]
+  
   },
   {
     slug: "techtogether-digital-literacy",
