@@ -36,6 +36,10 @@ const caseStudySections: { key: keyof Project; label: string }[] = [
 const sectionLabelOverrides: Record<string, string> = {
   "fairlearn-bias-audit:context": "The Setup",
   "multi-pdf-rag-chatbot:context": "The goal",
+  "independent-research-ai-cognition:problem": "The focus",
+  "independent-research-ai-cognition:context": "How I worked",
+  "independent-research-ai-cognition:process": "Enterprise AI adoption",
+  "independent-research-ai-cognition:tradeoffs": "Structural algorithmic bias",
 };
 
 export default async function ProjectCaseStudyPage({
