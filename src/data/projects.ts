@@ -116,7 +116,7 @@ export const projects: Project[] = [
       `I built a retrieval augmented generation pipeline. I chunked and embedded the source PDFs,
       retrieved the passages most relevant to each query, and instructed the model to generate
       answers from the retrieved context. Using RAGAS evaluation on a test syllabus, the system
-      achieved 89% to 95% across 10 questions.`,
+      achieved 89% to 95% faithfulness across 10 questions.`,
     tradeoffs:
       "Grounding turned out to be a dial rather than a switch. Retrieve too narrowly and the model gives incomplete answers whenever a question spans multiple sections. Retrieve too broadly and irrelevant context creeps back in, reopening the door to hallucination. Chunk size and retrieval depth ended up mattering as much as the underlying model.",
     outcome: [
@@ -252,10 +252,10 @@ export const projects: Project[] = [
   },
   {
     slug: "independent-research",
-    title: "Independent Research: AI Literacy and Misuse in Education",
+    title: "ArcGIS Storymap: Asking the Right Questions",
     oneLiner:
       "An interactive visual StoryMap introducing AI fundamentals for a Gen Z audience and encouraging more thoughtful use of AI tools.",
-    category: "Research",
+    category: "AI Literacy",
     featured: false,
     timeframe: "December 2023",
     tech: ["AI literacy", "Visual Storytelling", "Research synthesis", "ArcGIS Storymap"],

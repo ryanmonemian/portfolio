@@ -13,7 +13,8 @@ export type ProjectCategory =
   | "Applied AI"
   | "Data Systems"
   | "Accessibility"
-  | "Research";
+  | "Research"
+  | "AI Literacy";
 
 export type Project = {
   slug: string;
