@@ -79,10 +79,6 @@ export const journey: JourneyBeat[] = [
       and work experience are helping me figure out which problems I want to pursue more deeply and what 
       Human Centered Artificial Intelligence should look like in practice.`,
 
-      `Right now, I am especially interested in AI safety, algorithmic fairness, human AI interaction, and 
-      trustworthy AI systems. Over time, I want to contribute to both building and regulating AI so that 
-      these systems remain accountable to the people they affect.`,
-
       `My interests will probably continue to change as I learn more. Right now, I'm focused on learning how 
       to evaluate and build systems responsibly through my projects, coursework, and work experience. 
       Eventually, I want to contribute to how we govern and build AI so these systems remain accountable 

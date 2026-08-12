@@ -18,15 +18,13 @@ export const projects: Project[] = [
       },
     ],
     problem: [
-      `Recidivism prediction systems inform bail, sentencing, and parole decisions.
-      They appear objective because they're produced by a model, but that does not
-      mean the errors are distributed equally across groups. I wanted to understand
-      what that disparity looks like and where the model gets it wrong.`,
+      `Recidivism prediction systems can influence decisions that carry serious 
+      consequences for the people being evaluated. Their scores may appear objective 
+      because they are produced by a model, but that does not mean the errors are distributed equally.`,
 
-      `I wanted to understand what happens when we look past overall accuracy and
-      ask who a model gets wrong. Instead of treating fairness as an abstract idea,
-      I audited a recidivism model across racial groups and compared the results with
-      the real COMPAS risk scores.`
+      `I wanted to understand what happens when we look beyond overall accuracy and ask who a model gets 
+      wrong. Instead of treating fairness as an abstract idea, I audited a recidivism model across racial 
+      groups and compared the results with real COMPAS risk scores.`
     ],
     context:
       `Using 6,172 records from the ProPublica COMPAS dataset, I independently trained
@@ -76,7 +74,10 @@ export const projects: Project[] = [
       },
     ],
     problem:
-      "Model safety depends on refusals holding up under pressure. But a refusal is trained behavior, not a hard boundary. If you do not know how it fails, you are trusting a system you have never actually tested. If you do not understand how refusal behavior fails under pressure, you are trusting a safety claim that has not been meaningfully tested.",
+      `Model safety depends on refusals holding up under pressure. But a refusal is 
+      trained behavior, not a hard boundary. If you do not understand how 
+      refusal behavior fails under pressure, you are trusting a safety claim that has 
+      not been meaningfully tested.`,
     process:
       "I sourced 100 real-world toxic prompts from the LMSYS Toxic-Chat dataset and benchmarked GPT-4o and GPT-4o-mini across hate speech, manipulation, and jailbreak categories. I built an adversarial testing pipeline across five conditions. Prompt engineering alone increased refusal rates from 31% to 76%. I then developed a regex plus LLM classifier that flagged soft refusals in 16 to 25% of responses that pattern matching alone would have missed.",
     tradeoffs:
